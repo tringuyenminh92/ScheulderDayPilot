@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html ng-app="GlobalModule">
+<head>
+    <title>Angular Scheduler</title>
+
+    <!-- head -->
+    <meta charset="utf-8">
+
+
+    <!-- helper libraries -->
+    <script src="custom/shareLib/jquery-1.9.1.min.js"></script>
+
+    <!-- Angular Libraries -->
+    <script src="custom/shareLib/angular.js"></script>
+    <script src="custom/shareLib/ui-bootstrap.js"></script>
+    <script src="custom/shareLib/ui-bootstrap-tpls.js"></script>
+
+    <!-- daypilot libraries -->
+    <script src="custom/shareLib/daypilot-all.min.js"></script>
+    <!-- Custom script -->
+    <script src="custom/appLib/MyApp.js"></script>
+    <script src="custom/appLib/MainController.js"></script>
+
+
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- /head -->
+
+</head>
+<body ng-controller="mainController">
+
+    <!-- top -->
+    <div id="main">
+        <div id="tabs"></div>
+    </div>
+    <div class="container-fluid">
+        <!-- /top -->
+        <div style="float: left; min-height: 250px; margin-left: 0;">
+            <!-- load view of navigator directive -->
+            <datepicker ng-model="current.selectedDate" class="well well-sm" min-mode="month" datepicker-mode="'month'"></datepicker>
+        </div>
+
+        <div style="margin-left: 280px">
+            <!-- load view of scheduler directive -->
+            <daypilot-scheduler id="scheduler" daypilot-config="schedulerConfig" daypilot-events="current.events"></daypilot-scheduler>
+        </div>
+
+
+        <!-- bottom -->
+    </div>
+
+
+    <script type="text/ng-template" id="editEvent.html">
+        <div class="modal-header bg-primary">
+            <div class="modal-title">{{passData.Title}}</div>
+        </div>
+        <div class="modal-body">
+            <div>
+                <textarea rows="5" class="form-control" ng-model="passData.data.text"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default" ng-click="cancel()" ng-show="passData.ButtonCancel">{{passData.ButtonCancel}}</button>
+            <button class="btn btn-primary" ng-click="ok()" ng-show="passData.ButtonOk">{{passData.ButtonOk}}</button>
+        </div>
+
+    </script>
+
+</body>
+</html>

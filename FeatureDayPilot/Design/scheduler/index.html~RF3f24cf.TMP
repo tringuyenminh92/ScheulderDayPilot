@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html ng-app="GlobalModule">
+<head>
+    <title>Angular Scheduler</title>
+
+    <!-- head -->
+    <meta charset="utf-8">
+    <!-- demo stylesheet -->
+    <link type="text/css" rel="stylesheet" href="../helpers/demo.css?v=1514" />
+    <link type="text/css" rel="stylesheet" href="../helpers/media/layout.css?v=1514" />
+    <link type="text/css" rel="stylesheet" href="../helpers/media/elements.css?v=1514" />
+
+    <!-- helper libraries -->
+    <script src="../helpers/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+    <!-- daypilot libraries -->
+    <script src="../js/daypilot-all.min.js?v=1514" type="text/javascript"></script>
+
+    <!-- daypilot themes -->
+    <link type="text/css" rel="stylesheet" href="../themes/areas.css?v=1514" />
+
+    <link type="text/css" rel="stylesheet" href="../themes/month_white.css?v=1514" />
+    <link type="text/css" rel="stylesheet" href="../themes/month_green.css?v=1514" />
+    <link type="text/css" rel="stylesheet" href="../themes/month_transparent.css?v=1514" />
+    <link type="text/css" rel="stylesheet" href="../themes/month_traditional.css?v=1514" />
+
+    <link type="text/css" rel="stylesheet" href="../themes/navigator_8.css?v=1514" />
+    <link type="text/css" rel="stylesheet" href="../themes/navigator_white.css?v=1514" />
+
+    <link type="text/css" rel="stylesheet" href="../themes/calendar_transparent.css?v=1514" />
+    <link type="text/css" rel="stylesheet" href="../themes/calendar_white.css?v=1514" />
+    <link type="text/css" rel="stylesheet" href="../themes/calendar_green.css?v=1514" />
+    <link type="text/css" rel="stylesheet" href="../themes/calendar_traditional.css?v=1514" />
+
+    <link type="text/css" rel="stylesheet" href="../themes/scheduler_8.css?v=1514" />
+    <link type="text/css" rel="stylesheet" href="../themes/scheduler_white.css?v=1514" />
+    <link type="text/css" rel="stylesheet" href="../themes/scheduler_green.css?v=1514" />
+    <link type="text/css" rel="stylesheet" href="../themes/scheduler_blue.css?v=1514" />
+    <link type="text/css" rel="stylesheet" href="../themes/scheduler_traditional.css?v=1514" />
+    <link type="text/css" rel="stylesheet" href="../themes/scheduler_transparent.css?v=1514" />
+
+
+    <!-- /head -->
+
+</head>
+<body>
+
+    <!-- top -->
+    <div id="main">
+        <div id="tabs"></div>
+    </div>
+    <div id="content"></div>
+    <!-- /top -->
+
+    <div id="dp"></div>
+
+</body>
+</html>
+
