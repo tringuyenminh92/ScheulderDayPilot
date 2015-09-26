@@ -17,10 +17,16 @@
 
     <!-- daypilot libraries -->
     <script src="custom/shareLib/daypilot-all.min.js"></script>
+
+    <!-- for exporting pdf -->
+    <script src="custom/shareLib/jspdf.debug.js"></script>
+    <script src="custom/shareLib/html2canvas.js"></script>
+
+
     <!-- Custom script -->
     <script src="custom/appLib/MyApp.js"></script>
     <script src="custom/appLib/MainController.js"></script>
-
+    <script src="custom/appLib/handle.js"></script>
 
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
@@ -40,11 +46,11 @@
             <datepicker ng-model="current.selectedDate" class="well well-sm" min-mode="month" datepicker-mode="'month'"></datepicker>
         </div>
 
-        <div style="margin-left: 280px">
+        <div style="margin-left: 280px" id="myScheduler">
             <!-- load view of scheduler directive -->
             <daypilot-scheduler id="scheduler" daypilot-config="schedulerConfig" daypilot-events="current.events"></daypilot-scheduler>
         </div>
-
+        <div class="btn btn-primary" ng-click="exportScheduler()" >Export</div>
 
         <!-- bottom -->
     </div>

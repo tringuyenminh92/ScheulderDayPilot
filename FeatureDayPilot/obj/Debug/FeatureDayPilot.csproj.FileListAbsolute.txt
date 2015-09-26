@@ -4,3 +4,9 @@ C:\Users\UR81HC\documents\visual studio 2013\Projects\FeatureDayPilot\FeatureDay
 C:\Users\UR81HC\documents\visual studio 2013\Projects\FeatureDayPilot\FeatureDayPilot\obj\Debug\FeatureDayPilot.csprojResolveAssemblyReference.cache
 C:\Users\UR81HC\documents\visual studio 2013\Projects\FeatureDayPilot\FeatureDayPilot\obj\Debug\FeatureDayPilot.dll
 C:\Users\UR81HC\documents\visual studio 2013\Projects\FeatureDayPilot\FeatureDayPilot\obj\Debug\FeatureDayPilot.pdb
+D:\Github\DayPilotPractice\FeatureDayPilot\bin\FeatureDayPilot.dll.config
+D:\Github\DayPilotPractice\FeatureDayPilot\bin\FeatureDayPilot.dll
+D:\Github\DayPilotPractice\FeatureDayPilot\bin\FeatureDayPilot.pdb
+D:\Github\DayPilotPractice\FeatureDayPilot\obj\Debug\FeatureDayPilot.csprojResolveAssemblyReference.cache
+D:\Github\DayPilotPractice\FeatureDayPilot\obj\Debug\FeatureDayPilot.dll
+D:\Github\DayPilotPractice\FeatureDayPilot\obj\Debug\FeatureDayPilot.pdb

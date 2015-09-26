@@ -252,7 +252,7 @@ function mainController($scope, modalService, $timeout) {
         cellWidthSpec: "Auto",
         treeEnabled: false,
         resources: $scope.schedulerData,
-        contextMenu:menu,
+        contextMenu: menu,
         messageBarPosition: "Bottom",
         eventDeleteHandling: "Update",
         onEventDelete: function (agrs) { $scope.onEventDeleteHandler(agrs); },
@@ -298,9 +298,9 @@ function mainController($scope, modalService, $timeout) {
             var e = $scope.scheduler.events.find(data.id);
             // update the event text
             e.text(data.text);
-            $timeout(function() {
+            $timeout(function () {
                 $scope.scheduler.events.update(e);
-            }); 
+            });
 
         }, function () { }, templateObject);
 
@@ -320,6 +320,24 @@ function mainController($scope, modalService, $timeout) {
         $scope.schedulerConfig.startDate = new DayPilot.Date(newValue).firstDayOfMonth();
 
     });
+
+    $scope.exportScheduler = function () {
+
+        html2canvas($("#myScheduler"), {
+            onrendered: function (canvas) {
+
+                //need to scale canvas??
+
+                var imgData = canvas.toDataURL(
+                    'image/png');
+                var doc = new jsPDF('p', 'mm');
+                doc.addImage(imgData, 'PNG', 10, 10);
+                doc.save('sample-file.pdf');
+            }
+        });
+
+    };
+
 
 }
 
