@@ -10,3 +10,9 @@ D:\Github\DayPilotPractice\FeatureDayPilot\bin\FeatureDayPilot.pdb
 D:\Github\DayPilotPractice\FeatureDayPilot\obj\Debug\FeatureDayPilot.csprojResolveAssemblyReference.cache
 D:\Github\DayPilotPractice\FeatureDayPilot\obj\Debug\FeatureDayPilot.dll
 D:\Github\DayPilotPractice\FeatureDayPilot\obj\Debug\FeatureDayPilot.pdb
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\DayPilotPractice\FeatureDayPilot\bin\FeatureDayPilot.dll.config
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\DayPilotPractice\FeatureDayPilot\bin\FeatureDayPilot.dll
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\DayPilotPractice\FeatureDayPilot\bin\FeatureDayPilot.pdb
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\DayPilotPractice\FeatureDayPilot\obj\Debug\FeatureDayPilot.csprojResolveAssemblyReference.cache
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\DayPilotPractice\FeatureDayPilot\obj\Debug\FeatureDayPilot.dll
+C:\Users\BeGa\Documents\Visual Studio 2013\Projects\DayPilotPractice\FeatureDayPilot\obj\Debug\FeatureDayPilot.pdb

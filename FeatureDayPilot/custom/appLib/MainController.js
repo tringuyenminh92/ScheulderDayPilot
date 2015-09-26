@@ -8,6 +8,16 @@
  *	Modified Date: 22-09-2015
  *	Description: contextMenu of scheduler making error!!!
  *
+ *  Modified By: Nguyen Minh Tri - UR81HC
+ *	Modified Date: 22-09-2015
+ *	Description: html-> canvas->pdf
+ *
+ * pseudo-code:
+ *  While you still have some image to add:
+    create a new canvas that's the same width as the original canvas, but whose height is the height of Min(scaledPdfPageHeight, imageHeight).
+    draw the image to that canvas applying an image height shift.
+    add the canvas to the pdf using the .addImage() api
+
  *************************************************************/
 
 
@@ -321,23 +331,57 @@ function mainController($scope, modalService, $timeout) {
 
     });
 
+    $scope.canvasShiftImage = function (canvas, shiftAmt, realPdfPageHeight) {
+        shiftAmt = parseInt(shiftAmt) || 0;
+        if (shiftAmt <= 0) {
+            return canvas;
+        }
+
+        var newCanvas = document.createElement('canvas');
+        newCanvas.height = Math.min(canvas.height - shiftAmt, realPdfPageHeight);
+        newCanvas.width = canvas.width;
+        var ctx = newCanvas.getContext('2d');
+
+        var img = new Image();
+        img.src = canvas.toDataURL();
+        ctx.drawImage(img, 0, shiftAmt, img.width, img.height, 0, 0, img.width, img.height);
+
+        return newCanvas;
+    };
+
+    $scope.scaleAndSaveToPdf = function (canvas, fileName) {
+
+        var pdf = new jsPDF('l', 'px'),
+            pdfInternals = pdf.internal,
+            pdfPageSize = pdfInternals.pageSize,
+            pdfScaleFactor = pdfInternals.scaleFactor,
+            pdfPageWidth = pdfPageSize.width,
+            pdfPageHeight = pdfPageSize.height,
+            totalPdfHeight = 0,
+            htmlPageHeight = canvas.height,
+            htmlScaleFactor = canvas.width / (pdfPageWidth * pdfScaleFactor);
+
+        while (totalPdfHeight < htmlPageHeight) {
+            var newCanvas = $scope.canvasShiftImage(canvas, totalPdfHeight, pdfPageHeight * pdfScaleFactor);
+            pdf.addImage(newCanvas, 'jpeg', 0, 0, pdfPageWidth, 0, null, 'NONE');
+
+            totalPdfHeight += (pdfPageHeight * pdfScaleFactor * htmlScaleFactor);
+
+            if (totalPdfHeight < htmlPageHeight) { pdf.addPage(); }
+        }
+
+        pdf.save(fileName + (new Date().toISOString().replace(/[^0-9]/g, "")) + '.pdf');
+    };
+
     $scope.exportScheduler = function () {
 
-        html2canvas($("#myScheduler"), {
+        html2canvas($('body'), {
             onrendered: function (canvas) {
-
-                //need to scale canvas??
-
-                var imgData = canvas.toDataURL(
-                    'image/png');
-                var doc = new jsPDF('p', 'mm');
-                doc.addImage(imgData, 'PNG', 10, 10);
-                doc.save('sample-file.pdf');
+                $scope.scaleAndSaveToPdf(canvas, 'scheduler');
             }
         });
 
     };
-
 
 }
 

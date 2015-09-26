@@ -26,7 +26,6 @@
     <!-- Custom script -->
     <script src="custom/appLib/MyApp.js"></script>
     <script src="custom/appLib/MainController.js"></script>
-    <script src="custom/appLib/handle.js"></script>
 
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
@@ -44,13 +43,13 @@
         <div style="float: left; min-height: 250px; margin-left: 0;">
             <!-- load view of navigator directive -->
             <datepicker ng-model="current.selectedDate" class="well well-sm" min-mode="month" datepicker-mode="'month'"></datepicker>
+            <div class="btn btn-primary" ng-click="exportScheduler()">Export</div>
         </div>
 
-        <div style="margin-left: 280px" id="myScheduler">
+        <div style="margin-left: 280px">
             <!-- load view of scheduler directive -->
             <daypilot-scheduler id="scheduler" daypilot-config="schedulerConfig" daypilot-events="current.events"></daypilot-scheduler>
         </div>
-        <div class="btn btn-primary" ng-click="exportScheduler()" >Export</div>
 
         <!-- bottom -->
     </div>
