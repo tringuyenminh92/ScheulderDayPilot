@@ -64,6 +64,7 @@
     <Content Include="Content\ui-bootstrap-csp.css" />
     <Content Include="custom\appLib\MainController.js" />
     <Content Include="custom\appLib\MyApp.js" />
+    <Content Include="custom\appLib\UtilityHelper.js" />
     <Content Include="custom\daypilot-all.min.js" />
     <Content Include="custom\shareLib\daypilot-all.min.js" />
     <Content Include="custom\shareLib\html2canvas.js" />
