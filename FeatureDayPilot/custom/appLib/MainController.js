@@ -331,15 +331,8 @@ function mainController($scope, modalService, $timeout) {
 
     });
 
-
     $scope.exportScheduler = function () {
-
-        html2canvas($('body'), {
-            onrendered: function (canvas) {
-                $scope.scaleAndSaveToPdf(canvas, 'scheduler');
-            }
-        });
-
+        $scope.exportPdf(angular.element('#scheduler'), 'scheduler');
     };
 
 }

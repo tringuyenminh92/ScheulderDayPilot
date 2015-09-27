@@ -36,29 +36,36 @@
         };
 
         //using jsPDF to export image to pdf
-        $rootScope.scaleAndSaveToPdf = function (canvas, fileName) {
+        $rootScope.exportPdf = function (element, fileName) {
 
-            var pdf = new jsPDF('l', 'px'),
-                pdfInternals = pdf.internal,
-                pdfPageSize = pdfInternals.pageSize,
-                pdfScaleFactor = pdfInternals.scaleFactor,
-                pdfPageWidth = pdfPageSize.width,
-                pdfPageHeight = pdfPageSize.height,
-                totalPdfHeight = 0,
-                htmlPageHeight = canvas.height,
-                htmlScaleFactor = canvas.width / (pdfPageWidth * pdfScaleFactor);
+            html2canvas(angular.element(element), {
+                onrendered: function (canvas) {
 
-            while (totalPdfHeight < htmlPageHeight) {
-                var newCanvas = $rootScope.canvasShiftImage(canvas, totalPdfHeight, pdfPageHeight * pdfScaleFactor);
-                pdf.addImage(newCanvas, 'jpeg', 0, 0, pdfPageWidth, 0, null, 'NONE');
+                    var pdf = new jsPDF('l', 'px'),
+                         pdfInternals = pdf.internal,
+                         pdfPageSize = pdfInternals.pageSize,
+                         pdfScaleFactor = pdfInternals.scaleFactor,
+                         pdfPageWidth = pdfPageSize.width,
+                         pdfPageHeight = pdfPageSize.height,
+                         totalPdfHeight = 0,
+                         htmlPageHeight = canvas.height,
+                         htmlScaleFactor = canvas.width / (pdfPageWidth * pdfScaleFactor);
 
-                totalPdfHeight += (pdfPageHeight * pdfScaleFactor * htmlScaleFactor);
+                    while (totalPdfHeight < htmlPageHeight) {
+                        var newCanvas = $rootScope.canvasShiftImage(canvas, totalPdfHeight, pdfPageHeight * pdfScaleFactor);
+                        pdf.addImage(newCanvas, 'jpeg', 0, 0, pdfPageWidth, 0, null, 'NONE');
 
-                if (totalPdfHeight < htmlPageHeight) { pdf.addPage(); }
-            }
+                        totalPdfHeight += (pdfPageHeight * pdfScaleFactor * htmlScaleFactor);
 
-            pdf.save(fileName + (new Date().toISOString().replace(/[^0-9]/g, '')) + '.pdf');
+                        if (totalPdfHeight < htmlPageHeight) { pdf.addPage(); }
+                    }
+
+                    pdf.save(fileName + (new Date().toISOString().replace(/[^0-9]/g, '')) + '.pdf');
+                }
+            });
+
         };
+
 
     }
 
