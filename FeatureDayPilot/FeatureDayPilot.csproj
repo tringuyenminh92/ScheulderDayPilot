@@ -69,7 +69,7 @@
     <Content Include="custom\shareLib\daypilot-all.min.js" />
     <Content Include="custom\shareLib\html2canvas.js" />
     <Content Include="custom\shareLib\jquery-1.9.1.min.js" />
-    <Content Include="custom\shareLib\jspdf.debug.js" />
+    <Content Include="custom\shareLib\jspdf.js" />
     <Content Include="custom\shareLib\ui-bootstrap-tpls.js" />
     <Content Include="custom\shareLib\ui-bootstrap-tpls.min.js" />
     <Content Include="custom\shareLib\ui-bootstrap.js" />
